@@ -5,6 +5,10 @@ interface CalificacionesEstado {
   value: string;
   viewValue: string;
 }
+interface Estado {
+  value: string;
+  viewValue: string;
+}
 interface Clase {
   value: string;
   viewValue: string;
@@ -43,10 +47,26 @@ export class FormatoPeritajeComponent implements OnInit {
   bajo = 1
 
   selectedValue: string | undefined;
+  selectedEstado: string | undefined;
   selectedClase: string | undefined;
   selectedCombustible: string | undefined;
 
 
+  estados: Estado[] = [
+    {value: '1', viewValue: 'Rayado Leve'}, //verificar si es string o number y cambiar en la interface según
+    {value: '2', viewValue: 'Rayado Fuerte (Profundo)'},
+    {value: '3', viewValue: 'Golpe Muy Leve'},
+    {value: '4', viewValue: 'Golpe Fuerte (Deformado)'},
+    {value: '5', viewValue: 'Descuadre'},
+    {value: '6', viewValue: 'Corrosión'},
+    {value: '7', viewValue: 'Fisurado'},
+    {value: '8', viewValue: 'Pintura Manchado'},
+    {value: '9', viewValue: 'Desengrafe'},
+    {value: '10', viewValue: 'Reparado'},
+    {value: '11', viewValue: 'Reparado B'},
+    {value: '12', viewValue: 'Quebrado'},
+    {value: '13', viewValue: 'Requiere Arreglo'},
+  ];
   calificaciones: CalificacionesEstado[] = [
     {value: '5', viewValue: 'Nuevo'}, //verificar si es string o number y cambiar en la interface según
     {value: '4', viewValue: 'Muy Bueno'},
