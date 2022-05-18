@@ -90,14 +90,14 @@ export interface FormatoPeritaje {
     alineacionDireccion : number;
     antena : number;
     apoyaBrazo : number;
-    barbero : number;
+    babero : number;
     baseCajaDireccion : number;
     bateria : number;
     bocaLlantas : number;
     bocelesPuertas : number;
     bujesTijera : number;
     bujesTroqueTrasero : number;
-    cabecerasConPanttalas : number;
+    cabecerasConPantallas : number;
     cabecerasSillas : number;
     cajaFiltroAire : number;
     calefaccionVentilacion : number;
@@ -127,9 +127,9 @@ export interface FormatoPeritaje {
     espoilerTrasero : number;
     exploradorasAZ : number;
     extenTrasDerPunta : number;
-    extenDelsDerPunta : number;
+    extenDelDerPunta : number;
     extenTrasIzqPunta : number;
-    extenDelsIzqPunta : number;
+    extenDelIzqPunta : number;
     farolaDerecha : number;
     farolaIzquierda : number;
     frenos : number;

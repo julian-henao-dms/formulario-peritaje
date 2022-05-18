@@ -44,7 +44,10 @@ export class FormatoPeritajeComponent implements OnInit {
   malo = 0;
   noTiene = 1
   ok = 0;
-  bajo = 1
+  bajo = 1;
+  leve = 0;
+  fuerte = 1;
+  
 
   selectedValue: string | undefined;
   selectedEstado: string | undefined;
