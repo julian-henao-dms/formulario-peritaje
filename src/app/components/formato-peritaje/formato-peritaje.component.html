@@ -1,7 +1,7 @@
 <mat-card>
     <form #peritajeVehiculoForm="ngForm">
         <!-- Primer Bloque de campos -->
-        <mat-card>
+        <mat-card class="bloque-cb-1">
             <mat-form-field appearance="fill">
                 <mat-label>Fecha</mat-label>
                 <input matInput [matDatepicker]="picker" required name="fecha">
@@ -10,8 +10,8 @@
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
-            <section class="example-section radio-options-cb radio-options-cb">
-                <label class="cbradio-group-label">Calificación</label>
+            <section class="example-section radio-options-cb-alt">
+                <label class="cbradio-group-label">Calificación:</label>
                 <mat-radio-group aria-label="Calificación" required name="calificacion">
                     <mat-radio-button class="cb-radio-button" [value]="A">A</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="B">B</mat-radio-button>
@@ -28,8 +28,8 @@
                 <input matInput type="time" placeholder="Hora Final" required name="horaFinal">
             </mat-form-field>
 
-            <section class="example-section radio-options-cb radio-options-cb">
-                <label class="cbradio-group-label">Prueba de Ruta</label>
+            <section class="example-section radio-options-cb-alt">
+                <label class="cbradio-group-label">Prueba de Ruta:</label>
                 <mat-radio-group aria-label="Prueba de Ruta" required name="pruebaRuta">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -46,21 +46,10 @@
                 <input matInput placeholder="Firma Inspector" name="firmaInspector" value="Juan">
             </mat-form-field>
 
-            <!-- <mat-form-field class="select-estado" appearance="fill">
-                <mat-label>Calificación Estado</mat-label>
-                <mat-select>
-                    <mat-option>Ninguno</mat-option>
-                    <mat-option value="rayado_leve">5 - Nuevo</mat-option>
-                    <mat-option value="rayado_fuerte">4 - Muy Bueno</mat-option>
-                    <mat-option value="golpe_leve">3 - Defectos</mat-option>
-                    <mat-option value="golpe_fuerte">2 - Problemas</mat-option>
-                    <mat-option value="descuadre">1 - Malo</mat-option>
 
-                </mat-select>
-            </mat-form-field> -->
 
             <mat-form-field appearance="fill">
-                <mat-label>Calificación Estado</mat-label>
+                <mat-label>Calificación Estado:</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="calificacionEstado">
                     <mat-option *ngFor="let calificacion of calificaciones" [value]="calificacion.value">
                         {{calificacion.viewValue}}
@@ -71,7 +60,7 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Bloque 2 -->
-        <mat-card>
+        <mat-card class="bloque-cb-2">
             <mat-form-field appearance="fill">
                 <mat-label>Placa:</mat-label>
                 <input matInput placeholder="Placa" name="placa" value="DSF-255">
@@ -130,9 +119,9 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Tercer Bloque -->
-        <mat-card>
+        <mat-card class="bloque-cb-3">
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Cojineria</label>
+                <label class="cbradio-group-label" class="example-margin">Cojineria:</label>
                 <mat-radio-group aria-label="Cojineria" required name="cojineria">
                     <mat-radio-button class="cb-radio-button" [value]="tela">Tela</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="cuero">Cuero</mat-radio-button>
@@ -140,7 +129,7 @@
             </section>
 
             <section class="example-section radio-options-cb radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Caja</label>
+                <label class="cbradio-group-label" class="example-margin">Caja:</label>
                 <mat-radio-group aria-label="Caja" required name="caja">
                     <mat-radio-button class="cb-radio-button" [value]="mecanica">Mecánica</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="automatica">Automática</mat-radio-button>
@@ -148,7 +137,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label" class="example-margin">Tracción</label>
+                <label class="cbradio-group-label" class="example-margin">Tracción:</label>
                 <mat-radio-group aria-label="Tracción" required name="traccion">
                     <mat-radio-button class="cb-radio-button" [value]="t4x2">4X2</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="t4x4">4X4</mat-radio-button>
@@ -169,7 +158,7 @@
             </mat-form-field>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Rin de Lujo</label>
+                <label class="cbradio-group-label">Rin de Lujo:</label>
                 <mat-radio-group aria-label="Rin de Lujo" required name="rinLujo">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -177,7 +166,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Estribo de Lujo</label>
+                <label class="cbradio-group-label">Estribo de Lujo:</label>
                 <mat-radio-group aria-label="Estribo de Lujo" required name="estriboLujo">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -185,7 +174,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Vidrio Eléctrico</label>
+                <label class="cbradio-group-label">Vidrio Eléctrico:</label>
                 <mat-radio-group aria-label="Vidrio Eléctrico" required name="vidrioElectrico">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -193,7 +182,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Techo Vidrio</label>
+                <label class="cbradio-group-label">Techo Vidrio:</label>
                 <mat-radio-group aria-label="Techo Vidrio" required name="techoVidrio">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -201,7 +190,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Retrovisores Eléctricos</label>
+                <label class="cbradio-group-label">Retrovisores Eléctricos:</label>
                 <mat-radio-group aria-label="Retrovisores Eléctricos" required name="retrovisorElectrico">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -219,7 +208,7 @@
             </mat-form-field>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Barras De Techo</label>
+                <label class="cbradio-group-label">Barras De Techo:</label>
                 <mat-radio-group aria-label="Barras De Techo" required name="barrasTecho">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -227,7 +216,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Exploradoras</label>
+                <label class="cbradio-group-label">Exploradoras:</label>
                 <mat-radio-group aria-label="Exploradoras" required name="exploradoras">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -238,7 +227,7 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Cuarto Bloque  -->
-        <mat-card>
+        <mat-card class="bloque-cb-4 radio-btn-cb">
             <section class="example-section radio-options-cb">
                 <label class="cbradio-group-label">Repuesto Llaves:</label>
                 <mat-radio-group aria-label="Repuesto Llaves" required name="repuestoLlaves">
@@ -248,7 +237,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Libro Garantía</label>
+                <label class="cbradio-group-label">Libro Garantía:</label>
                 <mat-radio-group aria-label="Libro Garantía" required name="libroGarantia">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -256,7 +245,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Cambio Correo</label>
+                <label class="cbradio-group-label">Cambio Correo:</label>
                 <mat-radio-group aria-label="Tiene Cambio Correo" required name="cambioCorrea">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -269,7 +258,7 @@
             </mat-form-field>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Herramienta Completa</label>
+                <label class="cbradio-group-label">Herramienta Completa:</label>
                 <mat-radio-group aria-label="Herramienta Completa" required name="herramientaCompleta">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -277,7 +266,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Manuales</label>
+                <label class="cbradio-group-label">Manuales:</label>
                 <mat-radio-group aria-label="Manuales" required name="manuales">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -285,7 +274,7 @@
             </section>
 
             <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Reclamos Aseguradora</label>
+                <label class="cbradio-group-label">Reclamos Aseguradora:</label>
                 <mat-radio-group aria-label="Reclamos Aseguradora" required name="reclamosAseguradora">
                     <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
@@ -319,19 +308,13 @@
         </mat-card>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
-        <!-- Estado Pintura NgModel -->
-        <!-- <mat-radio-group name="animals">
-            <mat-radio-button *ngFor="let element of elementsOptionsAZ" [checked]="element.checked" value="{{element.value}}">{{element.label}}
-            </mat-radio-button>
-        </mat-radio-group> -->
-
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
         <!-- Estado Pintura  -->
-        <mat-card class="estado_pintura">
-
+        <mat-card class="bloque-cb-5 estado_pintura">
+            <!-- *ngFor="let estado of data.estadosPintura" -->
             <div class="group-radio-options-cb">
                 <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Puerta Del Izq</label>
+                    <label class="cbradio-group-label">Puerta Del Izq:</label>
                     <mat-radio-group aria-label="Puerta Del Izq" required name="estadoPintura.puertaDelIzq.repi">
                         <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
                         <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
@@ -351,966 +334,37 @@
                 </section>
             </div>
 
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Guardafango Del Izq</label>
-                    <mat-radio-group aria-label="Guardafango Del Izq" required name="estadoPintura.guardafangoIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardafango Del Izq" required name="estadoPintura.guardafangoIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardafango Del Izq" required name="estadoPintura.guardafangoIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Paral Panorámico Iz</label>
-                    <mat-radio-group aria-label="Paral Panorámico Iz" required name="estadoPintura.paralPanoramicoizq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Panorámico Iz" required name="estadoPintura.paralPanoramicoizq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Panorámico Iz" required name="estadoPintura.paralPanoramicoizq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Bomper Delantero</label>
-                    <mat-radio-group aria-label="Bomper Delantero" required name="estadoPintura.bomperDel.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Bomper Delantero" required name="estadoPintura.bomperDel.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Bomper Delantero" required name="estadoPintura.bomperDel.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Capó</label>
-                    <mat-radio-group aria-label="Capó" required name="estadoPintura.capo.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Capó" required name="estadoPintura.capo.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Capó" required name="estadoPintura.capo.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Panel Parafuego</label>
-                    <mat-radio-group aria-label="Panel Parafuego" required name="estadoPintura.panelParafuego.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Panel Parafuego" required name="estadoPintura.panelParafuego.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Panel Parafuego" required name="estadoPintura.panelParafuego.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Guardapolvo Met Izq</label>
-                    <mat-radio-group aria-label="Guardapolvo Met Izq" required name="estadoPintura.guardaPolvoMetIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardapolvo Met Izq" required name="estadoPintura.guardaPolvoMetIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardapolvo Met Izq" required name="estadoPintura.guardaPolvoMetIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Marco Frontal</label>
-                    <mat-radio-group aria-label="Marco Frontal" required name="estadoPintura.marcoFrontal.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Marco Frontal" required name="estadoPintura.marcoFrontal.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Marco Frontal" required name="estadoPintura.marcoFrontal.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Guardapolvo Met Der</label>
-                    <mat-radio-group aria-label="Guardapolvo Met Der" required name="estadoPintura.guardaPolvoMetDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardapolvo Met Der" required name="estadoPintura.guardaPolvoMetDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardapolvo Met Der" required name="estadoPintura.guardaPolvoMetDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Paral Panorámico Der</label>
-                    <mat-radio-group aria-label="Paral Panorámico Der" required name="estadoPintura.paralPanoramicoDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Panorámico Der" required name="estadoPintura.paralPanoramicoDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Panorámico Der" required name="estadoPintura.paralPanoramicoDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Guardafango Del Der</label>
-                    <mat-radio-group aria-label="Guardafango Del Der" required name="estadoPintura.guardaFangoDelDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardafango Del Der" required name="estadoPintura.guardaFangoDelDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Guardafango Del Der" required name="estadoPintura.guardaFangoDelDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Puerta Del Der</label>
-                    <mat-radio-group aria-label="Puerta Del Der" required name="estadoPintura.puertaDelDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Del Der" required name="estadoPintura.puertaDelDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Del Der" required name="estadoPintura.puertaDelDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Paral Central Der</label>
-                    <mat-radio-group aria-label="Paral Central Der" required name="estadoPintura.paralCentralDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Central Der" required name="estadoPintura.paralCentralDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Central Der" required name="estadoPintura.paralCentralDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Puerta Tras Der</label>
-                    <mat-radio-group aria-label="Puerta Tras Der" required name="estadoPintura.puertaTrasDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Tras Der" required name="estadoPintura.puertaTrasDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Tras Der" required name="estadoPintura.puertaTrasDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Estribo Der</label>
-                    <mat-radio-group aria-label="Estribo Der" required name="estadoPintura.estriboDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Estribo Der" required name="estadoPintura.estriboDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Estribo Der" required name="estadoPintura.estriboDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Nave Der</label>
-                    <mat-radio-group aria-label="Nave Der" required name="estadoPintura.naveDer.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Nave Der" required name="estadoPintura.naveDer.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Nave Der" required name="estadoPintura.naveDer.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Bomper Trasero</label>
-                    <mat-radio-group aria-label="Bomper Trasero" required name="estadoPintura.bomperTras.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Bomper Trasero" required name="estadoPintura.bomperTras.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Bomper Trasero" required name="estadoPintura.bomperTras.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Tapa Baúl</label>
-                    <mat-radio-group aria-label="Tapa Baúl" required name="estadoPintura.tapaBaul.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Tapa Baúl" required name="estadoPintura.tapaBaul.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Tapa Baúl" required name="estadoPintura.tapaBaul.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Panel Trasero</label>
-                    <mat-radio-group aria-label="Panel Trasero" required name="estadoPintura.panelTras.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Panel Trasero" required name="estadoPintura.panelTras.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Panel Trasero" required name="estadoPintura.panelTras.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Piso Baúl</label>
-                    <mat-radio-group aria-label="Piso Baúl" required name="estadoPintura.pisoBaul.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Piso Baúl" required name="estadoPintura.pisoBaul.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Piso Baúl" required name="estadoPintura.pisoBaul.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Nave Izq</label>
-                    <mat-radio-group aria-label="Nave Izq" required name="estadoPintura.naveIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Nave Izq" required name="estadoPintura.naveIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Nave Izq" required name="estadoPintura.naveIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Estribo Izq</label>
-                    <mat-radio-group aria-label="Estribo Izq" required name="estadoPintura.estriboIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Estribo Izq" required name="estadoPintura.estriboIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Estribo Izq" required name="estadoPintura.estriboIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Puerta Tras Izq</label>
-                    <mat-radio-group aria-label="Puerta Tras Izq" required name="estadoPintura.puertaTrasIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Tras Izq" required name="estadoPintura.puertaTrasIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Puerta Tras Izq" required name="estadoPintura.puertaTrasIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Paral Central Izq</label>
-                    <mat-radio-group aria-label="Paral Central Izq" required name="estadoPintura.paralCentralIzq.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Central Izq" required name="estadoPintura.paralCentralIzq.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Paral Central Izq" required name="estadoPintura.paralCentralIzq.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Capota</label>
-                    <mat-radio-group aria-label="Capota" required name="estadoPintura.capota.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Capota" required name="estadoPintura.capota.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Capota" required name="estadoPintura.capota.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
-            <div class="group-radio-options-cb">
-                <section class="example-section radio-options-cb">
-                    <label class="cbradio-group-label">Pisos Carrocería (Ext)</label>
-                    <mat-radio-group aria-label="Pisos Carrocería (Ext)" required name="estadoPintura.pisosCarroceriaExt.repi">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repi TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repi TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Pisos Carrocería (Ext)" required name="estadoPintura.pisosCarroceriaExt.repar">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Repar TIP A </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Repar TIP B </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-                <section class="example-section radio-options-cb">
-                    <mat-radio-group aria-label="Pisos Carrocería (Ext)" required name="estadoPintura.pisosCarroceriaExt.cambioRemovido">
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoA">Cambiado </mat-radio-button>
-                        <mat-radio-button class="cb-radio-button" [value]="repiTipoB">Removido </mat-radio-button>
-                    </mat-radio-group>
-                </section>
-            </div>
+
         </mat-card>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Selección Estado -->
-        <mat-form-field appearance="fill">
-            <mat-label>Código Estado</mat-label>
-            <mat-select [(ngModel)]="selectedEstado" name="codigoEstado">
-                <mat-option *ngFor="let estado of estados" [value]="estado.value">
-                    {{estado.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <mat-card class="bloque-cb-6 seleccion-estado">
+            <mat-form-field appearance="fill">
+                <mat-label>Código Estado</mat-label>
+                <mat-select [(ngModel)]="selectedEstado" name="codigoEstado">
+                    <mat-option *ngFor="let estado of estados" [value]="estado.value">
+                        {{estado.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Elemento A-Z -->
-        <mat-card class="estado_pintura">
-            <section class="example-section radio-options-cb" *ngFor="let elemento of elementos">
-                <label class="cbradio-group-label">{{elemento.label}}</label>
-                <mat-radio-group required name="{{elemento.name}}">
+        <mat-card class="bloque-cb-7 elementos-az">
+            <section class="example-section radio-options-cb" *ngFor="let elementoAz of data.elementosAz">
+                <label class="cbradio-group-label">{{elementoAz.label}}:</label>
+                <mat-radio-group required name="{{elementoAz.name}}" [(ngModel)]="elementoAz.value">
                     <mat-radio-button class="cb-radio-button" [value]="malo">Malo </mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
                 </mat-radio-group>
             </section>
 
         </mat-card>
-        <!-- Elemento A-Z -->
-        <mat-card class="elementos_a_z">
-
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Air Bag</label>
-                <mat-radio-group aria-label="Air Bag" required name="airBag">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Adhesivos Instalados</label>
-                <mat-radio-group aria-label="Adhesivos Instalados" required name="adhesivosInstalados">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Aire acondicionado</label>
-                <mat-radio-group aria-label="Aire acondicionado" required name="aireAcondicionado">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Alarma</label>
-                <mat-radio-group aria-label="Alarma" required name="alarma">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Alineación de Dirección</label>
-                <mat-radio-group aria-label="Alineación de Dirección" required name="alineacionDireccion">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Antena</label>
-                <mat-radio-group aria-label="Antena" required name="antena">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Apoya Brazo</label>
-                <mat-radio-group aria-label="Apoya Brazo" required name="apoyaBrazo">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Babero</label>
-                <mat-radio-group aria-label="Babero" required name="babero">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Base Caja de Dirección</label>
-                <mat-radio-group aria-label="Base Caja de Dirección" required name="baseCajaDireccion">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Batería</label>
-                <mat-radio-group aria-label="Batería" required name="bateria">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Bocallantas</label>
-                <mat-radio-group aria-label="Bocallantas" required name="bocaLlantas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Boceles Puertas</label>
-                <mat-radio-group aria-label="Boceles Puertas" required name="bocelesPuertas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Bujes de Tijera</label>
-                <mat-radio-group aria-label="Bujes de Tijera" required name="bujesTijera">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Bujes de Troque Trasero</label>
-                <mat-radio-group aria-label="Bujes de Troque Trasero" required name="bujesTroqueTrasero">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Cabeceras con Pantallas</label>
-                <mat-radio-group aria-label="Cabeceras con Pantallas" required name="cabecerasConPantallas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Cabeceras de Silla</label>
-                <mat-radio-group aria-label="Cabeceras de Silla" required name="cabecerasSillas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Caja Filtro del Aire</label>
-                <mat-radio-group aria-label="Caja Filtro del Aire" required name="cajaFiltroAire">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Calefacción Ventilación</label>
-                <mat-radio-group aria-label="Calefacción Ventilación" required name="calefaccionVentilacion">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Cámara</label>
-                <mat-radio-group aria-label="Cámara" required name="camara">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Carter</label>
-                <mat-radio-group aria-label="Carter" required name="carter">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Compresor</label>
-                <mat-radio-group aria-label="Compresor" required name="compresor">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Control de Llave Deteriorado</label>
-                <mat-radio-group aria-label="Control de Llave Deteriorado" required name="controlLLaveDeteriorado">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Cuna Motor</label>
-                <mat-radio-group aria-label="Cuna Motor" required name="cunaMotor">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Descansa Brazos</label>
-                <mat-radio-group aria-label="Descansa Brazos" required name="descansaBrazos">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Desgaste Irregular de LLantas</label>
-                <mat-radio-group aria-label="Desgaste Irregular de LLantas" required name="desgasteIrregularLlantas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Difícil Inspección Visual</label>
-                <mat-radio-group aria-label="Difícil Inspección Visual" required name="dificilInspeccionVisual">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Dirección Hidraulica</label>
-                <mat-radio-group aria-label="Dirección Hidraulica" required name="direccionHidraulica">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Dirección Derecha</label>
-                <mat-radio-group aria-label="Dirección Derecha" required name="direccionalDerecha">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Dirección Izquierda</label>
-                <mat-radio-group aria-label="Dirección Izquierda" required name="direccionalIzquierda">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Disco Del Derecho</label>
-                <mat-radio-group aria-label="Disco Del Derecho" required name="discoDelDerecho">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Disco Del Izquierdo</label>
-                <mat-radio-group aria-label="Disco Del Izquierdo" required name="discoDelIzquierdo">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Disco Tras Der</label>
-                <mat-radio-group aria-label="Disco Tras Der" required name="discoTrasDer">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Disco Tras Izq</label>
-                <mat-radio-group aria-label="Disco Tras Izq" required name="discoTrasIzq">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Elevadores de Vidrios</label>
-                <mat-radio-group aria-label="Elevadores de Vidrios" required name="elevadoresVidrios">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Embrague Duro y/o Alto</label>
-                <mat-radio-group aria-label="Embrague Duro y/o Alto" required name="embragueDuroAlto">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Empaque de las Puertas</label>
-                <mat-radio-group aria-label="Empaque Puertas" required name="empaquePuertas">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Encendedor</label>
-                <mat-radio-group aria-label="Encendedor" required name="encendedor">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Encendido</label>
-                <mat-radio-group aria-label="Encendido" required name="encendido">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Espejo Retrovisor Der</label>
-                <mat-radio-group aria-label="Espejo Retrovisor Der" required name="espejoRetrovisorDer">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Espejo Retrovisor Izq</label>
-                <mat-radio-group aria-label="Espejo Retrovisor Izq" required name="espejoRetrovisorIzq">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Espejos Eléctricos</label>
-                <mat-radio-group aria-label="Espejos Eléctricos" required name="espejoselectricos">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Espoiler Trasero</label>
-                <mat-radio-group aria-label="Espoiler Trasero" required name="espoilerTrasero">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Exploradoras</label>
-                <mat-radio-group aria-label="Exploradoras" required name="exploradorasAZ">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Ext Tras Derecha de Punta</label>
-                <mat-radio-group aria-label="Ext Tras Derecha de Punta" required name="extenTrasDerPunta">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Exten Del Derecha de Punta</label>
-                <mat-radio-group aria-label="Exten Del Derecha de Punta" required name="extenDelDerPunta">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Exten Del Izquierda de Punta</label>
-                <mat-radio-group aria-label="Exten Del Izquierda de Punta" required name="extenDelIzqPunta">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Exten Trasera Izq de Punta</label>
-                <mat-radio-group aria-label="Exten Trasera Izq de Punta" required name="extenTrasIzqPunta">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Farola Der (Incluye Talco)</label>
-                <mat-radio-group aria-label="Farola Der (Incluye Talco)" required name="farolaDerecha">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Farola Izq (Incluye Talco)</label>
-                <mat-radio-group aria-label="Farola Izq (Incluye Talco)" required name="farolaIzquierda">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Frenos</label>
-                <mat-radio-group aria-label="Frenos" required name="frenos">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Fuga Caja</label>
-                <mat-radio-group aria-label="Fuga Caja" required name="fugaCaja">
-                    <mat-radio-button class="cb-radio-button" [value]="leve">Leve</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="fuerte">Fuerte</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Fuga Refrigerante </label>
-                <mat-radio-group aria-label="Fuga Refrigerante " required name="fugaRefrigerante">
-                    <mat-radio-button class="cb-radio-button" [value]="leve">Leve</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="fuerte">Fuerte</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Fuga Liq de Frenos</label>
-                <mat-radio-group aria-label="Fuga Liq de Frenos" required name="fugaLiqFrenos">
-                    <mat-radio-button class="cb-radio-button" [value]="leve">Leve</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="fuerte">Fuerte</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Fuga Motor </label>
-                <mat-radio-group aria-label="Fuga Motor " required name="fugaMotor">
-                    <mat-radio-button class="cb-radio-button" [value]="leve">Leve</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="fuerte">Fuerte</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Fugas Hidraulico</label>
-                <mat-radio-group aria-label="Fugas Hidraulico" required name="fugasHidraulico">
-                    <mat-radio-button class="cb-radio-button" [value]="leve">Leve</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="fuerte">Fuerte</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Gas Desinstalado</label>
-                <mat-radio-group aria-label="Gas Desinstalado" required name="gasDesinstalado">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-            <section class="example-section radio-options-cb">
-                <label class="cbradio-group-label">Gato Hidráulico Capo</label>
-                <mat-radio-group aria-label="Gato Hidráulico Capo" required name="gatoHidraulicoCapo">
-                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
-                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
-                </mat-radio-group>
-            </section>
-
-        </mat-card>
-        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Radio buttons bloque final -->
-        <mat-card class="group-bottom-final">
+        <mat-card class="bloque-cb-8 group-bottom-final">
             <section class="example-section radio-options-cb">
                 <label class="cbradio-group-label">Nivel Liq Refrigerente</label>
                 <mat-radio-group aria-label="Nivel de Aceite" required name="nivelLiqRefrigerante">
@@ -1378,16 +432,61 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Campos dinámicos -->
-        <mat-card class="custom-fields-cb">
+        <mat-card class="bloque-cb-9 custom-fields-cb">
 
             <mat-form-field appearance="fill">
                 <mat-label>Elemento Requiere intervención:</mat-label>
-                <input matInput placeholder="" name="elementoRequiereInterv" value="">
+                <input matInput placeholder="" name="elementoRequiereIntervencion1" value="">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Valor Aproximado:</mat-label>
-                <input matInput placeholder="Valor " name="valorAprox" value="50000">
+                <input matInput placeholder="Valor " name="valorAprox1" value="50000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Elemento Requiere intervención:</mat-label>
+                <input matInput placeholder="" name="elementoRequiereIntervencion2" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Valor Aproximado:</mat-label>
+                <input matInput placeholder="Valor " name="valorAprox2" value="50000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Elemento Requiere intervención:</mat-label>
+                <input matInput placeholder="" name="elementoRequiereIntervencion3" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Valor Aproximado:</mat-label>
+                <input matInput placeholder="Valor " name="valorAprox3" value="50000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Elemento Requiere intervención:</mat-label>
+                <input matInput placeholder="" name="elementoRequiereIntervencion4" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Valor Aproximado:</mat-label>
+                <input matInput placeholder="Valor " name="valorAprox4" value="50000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Elemento Requiere intervención:</mat-label>
+                <input matInput placeholder="" name="elementoRequiereIntervencion5" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Valor Aproximado:</mat-label>
+                <input matInput placeholder="Valor " name="valorAprox5" value="50000">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Elemento Requiere intervención:</mat-label>
+                <input matInput placeholder="" name="elementoRequiereIntervencion6" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Valor Aproximado:</mat-label>
+                <input matInput placeholder="Valor " name="valorAprox6" value="50000">
             </mat-form-field>
 
         </mat-card>
