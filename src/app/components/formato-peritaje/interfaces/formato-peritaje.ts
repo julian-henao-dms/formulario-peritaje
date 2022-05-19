@@ -121,6 +121,7 @@ export interface FormatoPeritaje {
     empaquePuertas : number;
     encendedor : number;
     encendido : number;
+    espejoCortesia : number;
     espejoRetrovisorDer : number;
     espejoRetrovisorIzq : number;
     espejoselectricos : number;
@@ -179,7 +180,7 @@ export interface FormatoPeritaje {
     persiana : number;
     pito : number;
     plumillaTrasera : number;
-    plumillaDelantera : number;
+    plumillasDelanteras : number;
     polarizado : number;
     pomoPalanca : number;
     portaequipajes : number;

@@ -319,6 +319,13 @@
         </mat-card>
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
+        <!-- Estado Pintura NgModel -->
+        <!-- <mat-radio-group name="animals">
+            <mat-radio-button *ngFor="let element of elementsOptionsAZ" [checked]="element.checked" value="{{element.value}}">{{element.label}}
+            </mat-radio-button>
+        </mat-radio-group> -->
+
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
         <!-- Estado Pintura  -->
         <mat-card class="estado_pintura">
 
@@ -884,6 +891,17 @@
         <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
         <!-- Elemento A-Z -->
+        <mat-card class="estado_pintura">
+            <section class="example-section radio-options-cb" *ngFor="let elemento of elementos">
+                <label class="cbradio-group-label">{{elemento.label}}</label>
+                <mat-radio-group required name="{{elemento.name}}">
+                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo </mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
+                </mat-radio-group>
+            </section>
+
+        </mat-card>
+        <!-- Elemento A-Z -->
         <mat-card class="elementos_a_z">
 
             <section class="example-section radio-options-cb">
@@ -1276,6 +1294,13 @@
             <section class="example-section radio-options-cb">
                 <label class="cbradio-group-label">Gas Desinstalado</label>
                 <mat-radio-group aria-label="Gas Desinstalado" required name="gasDesinstalado">
+                    <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
+                    <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <section class="example-section radio-options-cb">
+                <label class="cbradio-group-label">Gato Hidráulico Capo</label>
+                <mat-radio-group aria-label="Gato Hidráulico Capo" required name="gatoHidraulicoCapo">
                     <mat-radio-button class="cb-radio-button" [value]="malo">Malo</mat-radio-button>
                     <mat-radio-button class="cb-radio-button" [value]="noTiene">No Tiene</mat-radio-button>
                 </mat-radio-group>
