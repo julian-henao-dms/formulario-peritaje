@@ -27,6 +27,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { HeaderComponent } from './components/header/header.component';
+import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     HomeComponent,
     FormatoPeritajeComponent,
-    HeaderComponent
+    HeaderComponent,
+    VehiculoComponent
   ],
   imports: [
     BrowserModule,

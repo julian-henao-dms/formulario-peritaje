@@ -1,0 +1,56 @@
+<mat-card class="bloque-cb-1">
+    <mat-form-field appearance="fill">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" required name="Fecini">
+
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <section class="example-section radio-options-cb-alt">
+        <label class="cbradio-group-label">Calificación:</label>
+        <mat-radio-group aria-label="Calificación" required name="Califica">
+            <mat-radio-button class="cb-radio-button" [value]="A">A</mat-radio-button>
+            <mat-radio-button class="cb-radio-button" [value]="B">B</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Hora Inicio:</mat-label>
+        <input matInput type="time" placeholder="Hora Inicio" required name="horaInicio">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Hora Final:</mat-label>
+        <input matInput type="time" placeholder="Hora Final" required name="horaFinal">
+    </mat-form-field>
+
+    <section class="example-section radio-options-cb-alt">
+        <label class="cbradio-group-label">Prueba de Ruta:</label>
+        <mat-radio-group aria-label="Prueba de Ruta" required name="pruebaRuta">
+            <mat-radio-button class="cb-radio-button" [value]="si">Si</mat-radio-button>
+            <mat-radio-button class="cb-radio-button" [value]="no">No</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre Inspector:</mat-label>
+        <input matInput placeholder="Nombre Inspector" name="Id_usu_inspector" value="Juan Perez">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Firma Inspector:</mat-label>
+        <input matInput placeholder="Firma Inspector" name="firmaInspector" value="Juan">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Calificación Estado:</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="Califica2">
+            <mat-option *ngFor="let calificacion of calificaciones" [value]="calificacion.value">
+                {{calificacion.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>
